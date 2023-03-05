@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="end">
+      <ion-button (click)="openTutorial()">
+        {{ 'see tutorial' | translate | uppercase}}
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="addPoint()">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-card-header>
+        <ion-card-subtitle> {{ 'ADD_EDIT_MERIT' | translate | uppercase }} </ion-card-subtitle>
+        <ion-card-title>
+          {{ 'POINTS' | translate | uppercase }}
+        </ion-card-title>
+      </ion-card-header>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row *ngIf="viewState$ | async as vs">
+      <ion-col size="12" *ngIf="viewState$ | async as vs">
+        <ion-item *ngFor="let p of vs.pointsList">
+          <ion-label (click)="editPoint(p)">
+            {{ p.label }}
+          </ion-label>
+          <ion-badge color="medium" (click)="editPoint(p)" slot="end">
+            <ion-text color="light">
+              {{ p.value }}
+            </ion-text>
+          </ion-badge>
+          <ion-buttons slot="end">
+            <ion-button (click)="delete(p)" expand="block" fill="clear" shape="round">
+              <ion-icon name="close" color='danger'></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
