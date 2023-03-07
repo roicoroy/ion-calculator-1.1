@@ -1,22 +1,9 @@
+@import 'src/theme/const';
+
 app-card-menu {
-    position: absolute;
-    z-index: 1;
-    top: 2vh;
+    margin: $grid2 0 0 0;
 }
 
 ion-grid {
-    margin: 11vh 0 0 0;
-    z-index: -1;
-    position: relative;
-}
-
-app-entries-list {
-    margin: 15vh 0 0 0;
-    z-index: -1;
-    position: relative;
-}
-
-app-waiters-list {
-    z-index: -1;
-    position: relative;
+    margin: $grid10 0 0 0;
 }

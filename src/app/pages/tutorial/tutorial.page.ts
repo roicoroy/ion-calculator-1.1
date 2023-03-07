@@ -13,7 +13,7 @@ import { TutorialActions } from 'src/app/store/tutorial/tutorial.action';
 export class TutorialPage implements OnInit, AfterViewInit {
   slidesOptions: any = {
     zoom: {
-      toggle: false // Disable zooming to prevent weird double tap zomming on slide images
+      toggle: false
     }
   };
   @ViewChild(IonSlides, { static: true }) slides: IonSlides;
@@ -24,7 +24,6 @@ export class TutorialPage implements OnInit, AfterViewInit {
 
   constructor(
     public menu: MenuController,
-    private router: Router,
     private store: Store,
     private navigation: NavigationService,
 

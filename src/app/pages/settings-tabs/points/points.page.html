@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [translucent]="true" collapse="fade">
   <ion-toolbar>
     <ion-buttons slot="end">
       <ion-button (click)="openTutorial()">
@@ -13,8 +13,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header class="absolute-header" collapse="none">
     <ion-toolbar>
       <ion-card-header>
         <ion-card-subtitle>

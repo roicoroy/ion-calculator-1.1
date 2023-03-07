@@ -27,8 +27,48 @@
 
 @import url("./assets/fonts/montserrat/Montserrat.css");
 
-.app-font {
-  font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif !important;
+@font-face {
+  font-family: 'SegoeUI';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/Segoe\ UI.ttf');
+}
+
+@font-face {
+  font-family: 'SegoeUI-Bold';
+  font-style: normal;
+  font-weight: bold;
+  src: url('./assets/fonts/Segoe\ UI\ Bold.ttf');
+}
+
+@font-face {
+  font-family: 'SegoeUI-BoldItalic';
+  font-style: italic;
+  font-weight: bold;
+  src: url('./assets/fonts/Segoe\ UI\ Bold\ Italic.ttf');
+}
+
+@font-face {
+  font-family: 'SegoeUI-Italic';
+  font-style: italic;
+  font-weight: normal;
+  src: url('./assets/fonts/Segoe\ UI\ Italic.ttf');
+}
+
+ion-label {
+  font-family: 'SegoeUI-Italic';
+}
+
+ion-text {
+  font-family: 'SegoeUI-BoldItalic';
+}
+
+ion-note {
+  font-family: 'SegoeUI';
+}
+
+ion-title {
+  font-family: 'SegoeUI-Bold';
 }
 
 * {

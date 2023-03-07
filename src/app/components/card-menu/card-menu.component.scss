@@ -1,6 +1,8 @@
+@import 'src/theme/const';
+
 .container {
-  position: fixed;
-  margin: 0px 16px 0 16px;
+  position: absolute;
+  margin: 0px $grid2 0 $grid2;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -9,11 +11,11 @@
 }
 
 ion-card {
-  border-radius: 12px;
+  border-radius: $grid2;
 }
 
 ion-thumbnail {
-  margin: 5px;
+  margin: $grid;
 }
 
 ion-list {
@@ -26,7 +28,7 @@ ion-item {
 
 ion-col {
   .subtitle {
-    font-size: 8px;
+    font-size: $grid2;
   }
 }
 
