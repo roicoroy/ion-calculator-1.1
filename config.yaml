@@ -8,15 +8,36 @@ platforms:
   ios:
     targets:
       App:
-        version: 1.1
+        incrementVersionCode: true
         bundleId: $BUNDLE_ID
 
+        version: 16.4
+        productName: Tips Share Calculator
+        displayName: Tips Share
+
+        buildSettings:
+          ENABLE_BITCODE: false
+          STRIP_SWIFT_SYMBOLS: false
+
+        plist:
+          replace: false
+          entries:
+            - NSFaceIDUsageDescription: Use Face ID to authenticate yourself and login
+
         entitlements:
-          - com.apple.developer.associated-domains: ["applinks:goiaberia.com"]
+          - keychain-access-groups:
+              [
+                'com.keychain.access.group'
+              ]
+
+        frameworks:
+          - CoreServices.framework
+          - ImageIO.framework
+          - LocalAuthentication.framework
+          - WebKit.framework
   android:
+    incrementVersionCode: true
     packageName: $PACKAGE_NAME
-    versionName: 1.1
-    versionCode: 197
 
     manifest:
       - file: android/app/src/main/AndroidManifest.xml
