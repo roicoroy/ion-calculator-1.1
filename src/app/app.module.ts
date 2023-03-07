@@ -19,7 +19,10 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { LanguageState } from './store/language/language.state';
 import { ResultState } from './store/result/result.state';
 import { KeyboardState } from './store/keyboard/keyboard.state';
-import { TutorialState } from './store/tutorial/point.state';
+import { TutorialState } from './store/tutorial/tutorial.state';
+import { ComponentsModule } from './components/components.module';
+import { ThemeState } from './store/theme/theme.state';
+import { MenuState } from './store/menu/menu.state';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -54,7 +57,9 @@ export function createTranslateLoader(http: HttpClient) {
       LanguageState,
       ResultState,
       KeyboardState,
-      TutorialState
+      TutorialState,
+      ThemeState,
+      MenuState
     ]),
     NgxsStoragePluginModule.forRoot({
       key: [
@@ -62,10 +67,13 @@ export function createTranslateLoader(http: HttpClient) {
         'point',
         'waiter',
         'resultList',
-        'keyboard',
-        'tutorial'
+        // 'keyboard',
+        'tutorial',
+        'theme',
+        // 'menu'
       ]
     }),
+    ComponentsModule
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

@@ -23,7 +23,7 @@ export class TutorialState {
     }
 
     @Action(TutorialActions.SetTutorialComplete)
-    addPoint(ctx: StateContext<TutorialStateModel>, { payload }: TutorialActions.SetTutorialComplete) {
+    setTutorialComplete(ctx: StateContext<TutorialStateModel>, { payload }: TutorialActions.SetTutorialComplete) {
         const state = ctx.getState();
         return ctx.patchState({
             isTutorialComplete: payload

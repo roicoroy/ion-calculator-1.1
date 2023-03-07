@@ -1,0 +1,22 @@
+app-card-menu {
+    position: absolute;
+    z-index: 1;
+    top: 2vh;
+}
+
+ion-grid {
+    margin: 11vh 0 0 0;
+    z-index: -1;
+    position: relative;
+}
+
+app-entries-list {
+    margin: 15vh 0 0 0;
+    z-index: -1;
+    position: relative;
+}
+
+app-waiters-list {
+    z-index: -1;
+    position: relative;
+}

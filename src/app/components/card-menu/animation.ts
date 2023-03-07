@@ -13,133 +13,69 @@ import {
 export const SlideInOutAnimation = [
   trigger('slideInOut', [
     state('in', style({
-      'max-height': '500px', 'opacity': '1', 'visibility': 'visible'
+      'max-height': '500px',
     })),
     state('out', style({
-      'max-height': '0px', 'opacity': '0', 'visibility': 'hidden'
+      'max-height': '0px',
     })),
     transition('in => out', [group([
-      animate('400ms ease-in-out', style({
+      animate('100ms ease-in-out', style({
         'opacity': '0'
       })),
-      animate('600ms ease-in-out', style({
+      animate('100ms ease-in-out', style({
         'max-height': '0px'
       })),
-      animate('700ms ease-in-out', style({
+      animate('100ms ease-in-out', style({
         'visibility': 'hidden'
       }))
     ]
     )]),
     transition('out => in', [group([
+      animate('100ms ease-in-out', style({
+        'opacity': '1'
+      })),
+      animate('100ms ease-in-out', style({
+        'max-height': '500px'
+      })),
       animate('1ms ease-in-out', style({
         'visibility': 'visible'
       })),
-      animate('600ms ease-in-out', style({
-        'max-height': '500px'
-      })),
-      animate('800ms ease-in-out', style({
-        'opacity': '1'
-      }))
     ]
     )])
   ]),
 ]
 
-export const DropDownAnimationContainer = trigger("dropDownMenuContainer", [
-  transition(":enter", [
-    style({ height: 0, overflow: "hidden" }),
-    query(".menu-container", [
-      style({ opacity: 0, transform: "translateY(-50px)" })
+export const DropDownAnimationContainer =
+  trigger("dropDownMenuContainer", [
+    transition(":enter", [
+      query("ion-item, item-list", [
+        style({ opacity: 0 })
+      ]),
+      sequence([
+        query("ion-item, item-list", [
+          stagger(-50, [
+            animate(
+              "50ms ease-in-out",
+              style({ opacity: 1 })
+            )
+          ])
+        ]),
+      ])
     ]),
-    sequence([
-      animate("200ms", style({ height: "*" })),
-      query(".menu-container", [
-        stagger(-50, [
-          animate("400ms ease", style({ opacity: 1, transform: "none" }))
-        ])
+
+    transition(":leave", [
+      query("ion-item, item-list", [
+        style({ opacity: 0 })
+      ]),
+      sequence([
+        query("ion-item, item-list", [
+          stagger(50, [
+            animate(
+              "50ms ease-in-out",
+              style({ opacity: 0 })
+            )
+          ])
+        ]),
       ])
     ])
-  ]),
-
-  transition(":leave", [
-    style({ height: "*", overflow: "hidden" }),
-    query(".menu-container", [style({ opacity: 1, transform: "none" })]),
-    sequence([
-      query(".menu-container", [
-        stagger(50, [
-          animate(
-            "400ms ease",
-            style({ opacity: 0, transform: "translateY(-50px)" })
-          )
-        ])
-      ]),
-      animate("200ms", style({ height: 0 }))
-    ])
-  ])
-]);
-
-export const DropDownAnimation = trigger("dropDownMenu", [
-  transition(":enter", [
-    style({ height: 0, overflow: "hidden" }),
-    query(".menu-item", [
-      style({ opacity: 0, transform: "translateY(-50px)" })
-    ]),
-    sequence([
-      animate("200ms", style({ height: "*" })),
-      query(".menu-item", [
-        stagger(-50, [
-          animate("400ms ease", style({ opacity: 1, transform: "none" }))
-        ])
-      ])
-    ])
-  ]),
-
-  transition(":leave", [
-    style({ height: "*", overflow: "hidden" }),
-    query(".menu-item", [style({ opacity: 1, transform: "none" })]),
-    sequence([
-      query(".menu-item", [
-        stagger(50, [
-          animate(
-            "400ms ease",
-            style({ opacity: 0, transform: "translateY(-50px)" })
-          )
-        ])
-      ]),
-      animate("200ms", style({ height: 0 }))
-    ])
-  ])
-]);
-
-export const DropDownAnimationItem = trigger("dropDownMenuItem", [
-  transition(":enter", [
-    style({ height: 0, overflow: "hidden" }),
-    query("ion-item", [
-      style({ opacity: 0, transform: "translateY(-50px)" })
-    ]),
-    sequence([
-      animate("200ms", style({ height: "*" })),
-      query("ion-item", [
-        stagger(-50, [
-          animate("400ms ease", style({ opacity: 1, transform: "none" }))
-        ])
-      ])
-    ])
-  ]),
-
-  transition(":leave", [
-    style({ height: "*", overflow: "hidden" }),
-    query("ion-item", [style({ opacity: 1, transform: "none" })]),
-    sequence([
-      query("ion-item", [
-        stagger(50, [
-          animate(
-            "400ms ease",
-            style({ opacity: 0, transform: "translateY(-50px)" })
-          )
-        ])
-      ]),
-      animate("200ms", style({ height: 0 }))
-    ])
-  ])
-]);
+  ]);

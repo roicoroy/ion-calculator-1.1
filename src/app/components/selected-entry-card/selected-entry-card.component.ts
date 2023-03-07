@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Entry } from 'src/app/models';
 
@@ -14,8 +14,4 @@ export class SelectedEntryCardComponent {
   constructor(
     readonly sanitizer: DomSanitizer,
   ) { }
-
-  ionViewDidEnter() {
-    console.log(this.selectedEntry);
-  }
 }

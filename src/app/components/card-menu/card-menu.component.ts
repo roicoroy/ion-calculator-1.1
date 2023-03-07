@@ -1,13 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { DropDownAnimation, DropDownAnimationContainer, DropDownAnimationItem, SlideInOutAnimation } from './animation';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { Observable, Subject, takeUntil } from 'rxjs';
+import { MenuFacade } from 'src/app/services/menu/menu.facade';
+import { NavigationService } from 'src/app/services/navigation.service';
+import { UpdateMenuStatus } from 'src/app/store/menu/menu.actions';
+import { DropDownAnimationContainer, SlideInOutAnimation } from './animation';
 
 @Component({
   selector: 'app-card-menu',
   templateUrl: './card-menu.component.html',
   styleUrls: ['./card-menu.component.scss'],
-  animations: [DropDownAnimationContainer, DropDownAnimation, DropDownAnimationItem, SlideInOutAnimation]
+  animations: [
+    DropDownAnimationContainer,
+    SlideInOutAnimation,
+  ]
 })
-export class CardMenuComponent implements OnInit {
+export class CardMenuComponent implements OnInit, OnDestroy {
 
   isOpen = false;
 
@@ -15,44 +23,50 @@ export class CardMenuComponent implements OnInit {
 
   linksList = [
     {
-      icon: 'home',
-      slug: 'home'
-    },
-    {
-      icon: 'home',
-      slug: 'settings'
-    },
-    {
-      icon: 'home',
-      slug: 'calculator'
+      icon: 'settings',
+      path: 'settings/tabs/waiters',
+      name: 'settings'
     },
   ]
 
-  constructor() {
-    this.title = 'Goiabeira Calculator';
-   }
-
-  name = 'Angular 5';
   animationState = 'out';
 
-  toggleShowDiv() {
-    this.animationState = this.animationState === 'out' ? 'in' : 'out';
-    this.isOpen = !this.isOpen;
+  private readonly ngUnsubscribe = new Subject();
+
+  readonly menuState$: Observable<any>;
+
+  constructor(
+    private navigation: NavigationService,
+    private facade: MenuFacade,
+    private store: Store,
+  ) {
+    this.menuState$ = this.facade.menuState$;
+    this.menuState$
+      .pipe(
+        takeUntil(this.ngUnsubscribe)
+      )
+      .subscribe((vs: any) => {
+        // console.log(vs.isOpen[0]);
+        this.isOpen = vs.isOpen[0];
+      });
+    this.title = 'Goiabeira';
   }
 
+  async toggleMenuState() {
+    this.isOpen = !this.isOpen;
+    // this.animationState = this.animationState === 'out' ? 'in' : 'out';
+    this.store.dispatch(new UpdateMenuStatus(this.isOpen));
+
+  }
   ngOnInit() {
   }
-  show_hide() {
-    var click: any = document.getElementById("list-items");
-    if (click.style.display === "none") {
-      click.style.display = "block";
-    } else {
-      click.style.display = "none";
-    }
-  }
 
-  navigate(slug: string) {
-    console.log(slug);
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next(null);
+    this.ngUnsubscribe.complete();
   }
-
+  async navigate(path: string) {
+    this.navigation.navigateFadeOut(path);
+    await this.toggleMenuState();
+  }
 }

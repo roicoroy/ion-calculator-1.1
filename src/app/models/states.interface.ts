@@ -8,6 +8,9 @@ export interface IStates {
     resultList: WaiterResultStateModel,
     waiter: WaiterStateModel,
     tutorial: {
-        isTutorialComplete: boolean
+        isTutorialComplete: boolean,
+    }
+    theme: {
+        isDarkMode: boolean,
     }
 }

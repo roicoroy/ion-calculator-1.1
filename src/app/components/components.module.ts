@@ -12,6 +12,7 @@ import { ThemeComponent } from './theme/theme.component';
 import { SelectedEntryCardComponent } from './selected-entry-card/selected-entry-card.component';
 import { ShellModule } from './shell/shell.module';
 import { CardMenuComponent } from './card-menu/card-menu.component';
+import { MenuModule } from '../services/menu/menu.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { CardMenuComponent } from './card-menu/card-menu.component';
     FormsModule,
     IonicModule,
     TranslateModule,
-    ShellModule
+    ShellModule,
+    MenuModule
   ],
   declarations: [
     TranslateComponent,

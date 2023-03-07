@@ -1,9 +1,19 @@
 .container {
+  position: fixed;
   margin: 0px 16px 0 16px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 330px;
 }
 
-ion-toolbar {
+ion-card {
   border-radius: 12px;
+}
+
+ion-thumbnail {
+  margin: 5px;
 }
 
 ion-list {
@@ -12,4 +22,16 @@ ion-list {
 
 ion-item {
   --background: transparent;
+}
+
+ion-col {
+  .subtitle {
+    font-size: 8px;
+  }
+}
+
+:host {
+  .list-md {
+    background: transparent !important;
+  }
 }

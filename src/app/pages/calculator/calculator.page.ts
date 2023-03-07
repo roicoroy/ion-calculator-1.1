@@ -38,7 +38,7 @@ export class CalculatorPage {
 
   validationMessages = {
     tipsAmount: [
-      { type: 'required', message: 'tipsAmount is required' }
+      { type: 'required', message: 'Tips amount is required' }
     ],
     date: [
       { type: 'required', message: 'Date is required' }

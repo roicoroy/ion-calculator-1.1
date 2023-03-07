@@ -11,11 +11,9 @@
 
       <ion-card *ngFor="let waiter of selectedEntry.waiters">
         <ion-card-content>
-
           <ion-item-group>
-
             <ion-item>
-              <ion-label>{{ waiter.name }}</ion-label>
+              <ion-card-title>{{ waiter.name }}</ion-card-title>
               <ion-avatar slot="end">
                 <img [src]="sanitizer.bypassSecurityTrustUrl(waiter.avatar)" />
               </ion-avatar>

@@ -20,8 +20,8 @@ export class ThemeComponent implements OnInit {
     this.appDarkMode$ = this.theme.darkMode;
     this.appDarkModeIcon$ = this.theme.darkModeIcon;
   }
-  onChangeTheme(ev: any) {
-    this.theme.changeTheme(ev);
+  onChangeTheme(theme: any) {
+    this.theme.changeTheme(theme);
   }
 
 }
