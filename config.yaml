@@ -1,8 +1,8 @@
 vars:
   BUNDLE_ID:
-    default: tips.share.calculator
+    default: calculator.tips.share
   PACKAGE_NAME:
-    default: tips.share.calculator
+    default: calculator.tips.share
 
 platforms:
   ios:
