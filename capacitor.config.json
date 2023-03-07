@@ -1,5 +1,5 @@
 {
-	"appId": "io.ionic.starter",
+	"appId": "tips.share.calculator",
 	"appName": "ion-calculator-1.1",
 	"webDir": "www",
 	"bundledWebRuntime": false

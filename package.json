@@ -10,7 +10,8 @@
     "watch": "ng build --watch --configuration development",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "trapeze": "trapeze run config.yaml"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +33,7 @@
     "@capacitor/haptics": "4.1.0",
     "@capacitor/ios": "4.7.0",
     "@capacitor/keyboard": "4.1.1",
+    "@capacitor/project": "^2.0.10",
     "@capacitor/share": "^4.1.1",
     "@capacitor/splash-screen": "^4.1.4",
     "@capacitor/status-bar": "4.1.1",
@@ -43,6 +45,7 @@
     "@ngxs/logger-plugin": "^3.7.3",
     "@ngxs/storage-plugin": "^3.7.6",
     "@ngxs/store": "^3.7.3",
+    "@trapezedev/configure": "^7.0.8",
     "date-fns": "^2.28.0",
     "dayjs": "^1.11.0",
     "ionicons": "^6.0.3",

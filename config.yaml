@@ -1,0 +1,50 @@
+vars:
+  BUNDLE_ID:
+    default: tips.share.calculator
+  PACKAGE_NAME:
+    default: tips.share.calculator
+
+platforms:
+  ios:
+    targets:
+      App:
+        version: 1.1
+        bundleId: $BUNDLE_ID
+
+        entitlements:
+          - com.apple.developer.associated-domains: ["applinks:goiaberia.com"]
+  android:
+    packageName: $PACKAGE_NAME
+    versionName: 1.1
+    versionCode: 197
+
+    manifest:
+      - file: android/app/src/main/AndroidManifest.xml
+        target: manifest/application
+        inject: <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+      - file: AndroidManifest.xml
+        target: manifest/application
+        attrs:
+          android:name: $PACKAGE_NAME
+
+      - file: AndroidManifest.xml
+        target: manifest
+        inject: |
+          <queries>
+              <intent>
+                  <action android:name="android.intent.action.MAIN" />
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent>
+          </queries>
+
+    res:
+      - path: raw
+        file: config.json
+        text: |
+          {
+            "value": true
+          }
+      - path: drawable
+        file: icon.png
+        source: ./resources/icon.png
