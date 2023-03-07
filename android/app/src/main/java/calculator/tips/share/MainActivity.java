@@ -1,4 +1,4 @@
-package tips.share.calculator;
+package calculator.tips.share;
 
 import com.getcapacitor.BridgeActivity;
 
