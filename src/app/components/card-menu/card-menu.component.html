@@ -1,16 +1,16 @@
 <ion-header class="container" *ngIf="menuState$ | async as vs">
-	<ion-toolbar>
+	<ion-toolbar color="medium">
 		<ion-item lines="none">
 			<ion-thumbnail slot="start">
 				<img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
 			</ion-thumbnail>
 			<ion-col>
-				<ion-label class="title">{{ title }}</ion-label>
-				<ion-note class="subtitle">{{ 'Welcome to my App' }}</ion-note>
+				<ion-label color="light" class="title">{{ title }}</ion-label>
+				<ion-note color="light" class="subtitle">{{ 'Welcome to my App' }}</ion-note>
 			</ion-col>
 			<ion-buttons slot="end">
 				<ion-button (click)="toggleMenuState()">
-					<ion-icon class="menu-item" [name]="isOpen ? 'close' : 'menu'"></ion-icon>
+					<ion-icon color="light" class="menu-item" [name]="isOpen ? 'close' : 'menu'"></ion-icon>
 				</ion-button>
 			</ion-buttons>
 		</ion-item>
@@ -18,8 +18,8 @@
 		<div class="menu" *ngIf="isOpen" [@dropDownMenuContainer]>
 			<ion-list>
 				<ion-item lines="none" *ngFor="let l of linksList" (click)="navigate(l.path)">
-					<ion-icon slot="end" [name]="l.icon"></ion-icon>
-					<ion-label slot="start">{{ l.name }}</ion-label>
+					<ion-icon color="light" slot="end" [name]="l.icon"></ion-icon>
+					<ion-label color="light" slot="start">{{ l.name }}</ion-label>
 				</ion-item>
 			</ion-list>
 		</div>

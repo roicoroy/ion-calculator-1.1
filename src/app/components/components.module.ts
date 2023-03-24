@@ -13,6 +13,8 @@ import { SelectedEntryCardComponent } from './selected-entry-card/selected-entry
 import { ShellModule } from './shell/shell.module';
 import { CardMenuComponent } from './card-menu/card-menu.component';
 import { MenuModule } from '../services/menu/menu.module';
+import { ClearHeaderComponent } from './clear-header/clear-header.component';
+import { StickyHeaderComponent } from './sticky-header/sticky-header.component';
 
 @NgModule({
   imports: [
@@ -31,6 +33,8 @@ import { MenuModule } from '../services/menu/menu.module';
     SelectedEntryCardComponent,
     ThemeComponent,
     CardMenuComponent,
+    ClearHeaderComponent,
+    StickyHeaderComponent,
   ],
   exports: [
     TranslateComponent,
@@ -41,6 +45,8 @@ import { MenuModule } from '../services/menu/menu.module';
     SelectedEntryCardComponent,
     ThemeComponent,
     CardMenuComponent,
+    ClearHeaderComponent,
+    StickyHeaderComponent,
   ]
 })
 export class ComponentsModule { }

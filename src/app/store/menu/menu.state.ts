@@ -31,6 +31,7 @@ export class MenuState {
 
     @Action(UpdateMenuStatus)
     public updateMenuStatus(ctx: StateContext<IMenuStateModel>, action: UpdateMenuStatus): void {
+        console.log(action.isOpen);
         ctx.patchState({
             isOpen: action.isOpen
         });

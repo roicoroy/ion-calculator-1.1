@@ -10,6 +10,7 @@ import { ThemeService } from './services/theme.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  pages = new Array(10);
 
   constructor(
     public readonly language: LanguageService,
@@ -24,10 +25,10 @@ export class AppComponent {
       this.language.initTranslate();
       this.theme.themeInit();
 
-      if (this.platform.is('android') || this.platform.is('ios')) {
-        this.keyboardService.setAccessoryBarVisible(true).catch(() => { });
-        this.keyboardService.initKeyboardListeners();
-      }
+      // if (this.platform.is('android') || this.platform.is('ios')) {
+      //   this.keyboardService.setAccessoryBarVisible(true).catch(() => { });
+      //   this.keyboardService.initKeyboardListeners();
+      // }
     } catch (err) {
       console.log('This is normal in a browser', err);
     }

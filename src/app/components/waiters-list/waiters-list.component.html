@@ -1,10 +1,8 @@
 <ion-list *ngIf="viewState$ | async as vs">
-  <ion-list-header>
-    <ion-label>{{ "Waiter's list..." }}</ion-label>
-    <ion-button>See All</ion-button>
-  </ion-list-header>
-
   <div class="waiter-list" lines="none" *ngFor="let waiter of vs?.waiters[0]">
+    <ion-list-header>
+      <ion-label>{{ "Waiter's list..." }}</ion-label>
+    </ion-list-header>
     <ion-card>
       <ion-card-content>
         <ion-list>

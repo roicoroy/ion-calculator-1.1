@@ -46,17 +46,21 @@ export class CardMenuComponent implements OnInit, OnDestroy {
         takeUntil(this.ngUnsubscribe)
       )
       .subscribe((vs: any) => {
-        // console.log(vs.isOpen[0]);
         this.isOpen = vs.isOpen[0];
+        console.log(vs);
       });
     this.title = 'Goiabeira';
   }
 
   async toggleMenuState() {
+    console.log('this.isOpen');
     this.isOpen = !this.isOpen;
+    console.log(this.isOpen);
     // this.animationState = this.animationState === 'out' ? 'in' : 'out';
     this.store.dispatch(new UpdateMenuStatus(this.isOpen));
-
+  }
+  test() {
+    console.log('this.isOpen');
   }
   ngOnInit() {
   }

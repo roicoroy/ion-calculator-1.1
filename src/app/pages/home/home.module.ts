@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { HideHeaderDirective } from 'src/app/directive/hide-header.directive';
 
 @NgModule({
   imports: [
@@ -17,7 +18,14 @@ import { ComponentsModule } from 'src/app/components/components.module';
     TranslateModule,
     ComponentsModule
   ],
-  declarations: [HomePage],
+  declarations: [
+    HomePage,
+    // HideHeaderDirective,
+    // ScrollHideDirective
+  ],
+  entryComponents:[
+    // ScrollHideDirective
+  ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]

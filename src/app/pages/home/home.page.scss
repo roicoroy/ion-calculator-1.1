@@ -1,9 +1,69 @@
-@import 'src/theme/const';
+// @import 'src/theme/const';
 
-app-card-menu {
-    margin: $grid2 0 0 0;
+// app-card-menu {
+//     margin: $grid2 0 0 0;
+// }
+
+// ion-grid {
+//     margin: $grid10 0 0 0;
+// }
+
+// ion-toolbar {
+//     --background: green;
+//     --min-height: 100px
+// }
+
+ion-content {
+    // background: green!important;
+    // z-index: 10;
 }
 
-ion-grid {
-    margin: $grid10 0 0 0;
+ion-content::part(background) {
+    background: transparent;
 }
+
+:host {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+// app-clear-header {
+//     z-index: 1000;
+//     box-shadow: 2px 0 0 2px rgba(0, 0, 0, 0.3);
+//     color: white;
+//     background-color: #ab47bc;
+//     font-size: 2rem;
+//     height: 75px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+// }
+
+// app-sticky-header {
+//     z-index: 1000;
+//     box-shadow: 2px 0 0 2px rgba(0, 0, 0, 0.3);
+//     color: white;
+//     background-color: #ab47bc;
+//     font-size: 2rem;
+//     height: 75px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+// }
+
+// .content {
+//     // padding-top: 75px;
+// }
+
+// .page {
+//     height: 50vh;
+// }
+
+// .page:nth-child(odd) {
+//     background-color: rgba(0, 0, 0, 0.1);
+// }
+
+// .page:nth-child(even) {
+//     background-color: rgba(0, 0, 0, 0.05);
+// }
