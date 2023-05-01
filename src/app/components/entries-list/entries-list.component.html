@@ -1,4 +1,4 @@
-<ion-list *ngIf="viewState$ | async as vs">
+<!-- <ion-list *ngIf="viewState$ | async as vs">
   <ion-list-header *ngIf="vs.results[0].lenght > 0">
     <ion-label class="label">{{ "What is happening..." }}</ion-label>
   </ion-list-header>
@@ -9,4 +9,23 @@
       <ion-icon size="small" slot="end" name="close" color="danger" (click)="remove(result)"></ion-icon>
     </ion-item>
   </ion-card>
+</ion-list> -->
+<ion-list *ngIf="viewState$ | async as vs">
+
+  <ion-list-header *ngIf="vs.results[0].lenght > 0">
+    <ion-label class="label">{{ "What is happening..." }}</ion-label>
+  </ion-list-header>
+
+  <cdk-virtual-scroll-viewport itemSize="50" class="entries-cdk-viewport">
+    <div *cdkVirtualFor="let result of vs.results[0]" class="entry-item">
+      <ion-card>
+        <ion-item (click)="details(result)">
+          <ion-label>{{ result.date | date }}</ion-label>
+          <ion-note slot="end">{{ result.tipsMade | currency:'GPB' }}</ion-note>
+          <ion-icon size="small" slot="end" name="close" color="danger" (click)="remove(result)"></ion-icon>
+        </ion-item>
+      </ion-card>
+    </div>
+  </cdk-virtual-scroll-viewport>
+
 </ion-list>

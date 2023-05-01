@@ -7,7 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { HideHeaderDirective } from 'src/app/directive/hide-header.directive';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   imports: [
@@ -16,14 +16,15 @@ import { HideHeaderDirective } from 'src/app/directive/hide-header.directive';
     IonicModule,
     HomePageRoutingModule,
     TranslateModule,
-    ComponentsModule
+    ComponentsModule,
+    ScrollingModule,
   ],
   declarations: [
     HomePage,
     // HideHeaderDirective,
     // ScrollHideDirective
   ],
-  entryComponents:[
+  entryComponents: [
     // ScrollHideDirective
   ],
   schemas: [

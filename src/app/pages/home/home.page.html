@@ -1,26 +1,19 @@
 <app-card-menu #cardMenu></app-card-menu>
 
 <ion-content>
+  <!-- class="ion-margin ion-padding" -->
 
-  <!-- <div class="content">
-    <div class="page" *ngFor="let page of pages"></div>
-  </div> -->
-
-  <!-- <ion-grid #grid class="ion-margin ion-padding content">
-    <ion-row>
-      <ion-col>
-        <ion-item class="page" *ngFor="let p of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20]">
-          <ion-label>{{ p }}</ion-label>
-        </ion-item>
+    <ion-row class="entries-row">
+      <ion-col size="12">
+        <app-entries-list></app-entries-list>
       </ion-col>
     </ion-row>
-  </ion-grid> -->
+    <ion-row class="waiters-row">
+      <ion-col size="12">
+        <app-waiters-list></app-waiters-list>
+      </ion-col>
+    </ion-row>
 
-  <!-- <app-waiters-list></app-waiters-list> -->
-  <ion-grid>
-    <app-entries-list></app-entries-list>
-    <app-waiters-list></app-waiters-list>
-  </ion-grid>
 
 </ion-content>
 <ion-footer>

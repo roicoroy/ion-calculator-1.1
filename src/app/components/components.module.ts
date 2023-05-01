@@ -15,6 +15,7 @@ import { CardMenuComponent } from './card-menu/card-menu.component';
 import { MenuModule } from '../services/menu/menu.module';
 import { ClearHeaderComponent } from './clear-header/clear-header.component';
 import { StickyHeaderComponent } from './sticky-header/sticky-header.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { StickyHeaderComponent } from './sticky-header/sticky-header.component';
     IonicModule,
     TranslateModule,
     ShellModule,
-    MenuModule
+    MenuModule,
+    ScrollingModule
   ],
   declarations: [
     TranslateComponent,
